@@ -12,7 +12,7 @@ and open the template in the editor.
         <script type="text/javascript" src="recursos/funciones.js"></script>
     </head>
     <body>
-        <form name="form1" action="/ManejoFormularioHTML/Sevlet"
+        <form name="forma" action="/ManejoFormularioHTML/Sevlet"
               method="post" onsubmit="return validarforma(this);">
             <input type="hidden" name="oculto" value="valorOculto"> 
             <table width="200" id="one-column-emphasis">
@@ -24,7 +24,7 @@ and open the template in the editor.
                         Usuario: (*)
                     </td>
                     <td>
-                        <input class="default" type="text">
+                        <input class="default" type="text"
                         name="usuario" value="Escribir usuario"
                         onfocus="this.select();"/>
                     </td>  
@@ -35,7 +35,7 @@ and open the template in the editor.
                     </td>
 
                     <td>
-                        <input class="default" type="password">
+                        <input class="default" type="password"
                         name="password"
                         onfocus="this.select();"/>
                     </td> 
@@ -58,9 +58,9 @@ and open the template in the editor.
                         G&iacute;nero (*)
                     </td>
                     <td>
-                        Nombre<input  type="radio" name="genero" value="H">
+                        Hombre<input  type="radio" name="genero" value="H">
                         &nbsp;&nbsp;&nbsp;<!-- creat spaces between the elements horizontally -->
-                        Nombre<input  type="radio" name="genero" value="M">
+                        Mujer<input  type="radio" name="genero" value="M">
                     </td> 
                 </tr>
                 <tr>
@@ -94,7 +94,7 @@ and open the template in the editor.
                         Comentarios:
                     </td> 
                     <td>
-                        <textarea name="comentarios" cols="30" rows="2"
+                        <textarea name="comentario" cols="30" rows="2"
                                   class="default" onfocus="this.select();">
                             Escribir un texto</textarea>                 
                     </td>  

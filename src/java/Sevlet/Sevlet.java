@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Sevlet;
 
 import java.io.IOException;
@@ -13,10 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author ERICK
- */
+
 @WebServlet(name = "Sevlet", urlPatterns = {"/Sevlet"})
 public class Sevlet extends HttpServlet {
 
@@ -33,14 +26,96 @@ public class Sevlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            String usuario = request.getParameter("usuario");
+            String password = request.getParameter("password");
+            String[] tecnologias = request.getParameterValues("tecnologia");
+            String genero = request.getParameter("genero");
+            String ocupacion = request.getParameter("ocupacion");
+            String[] musica = request.getParameterValues("musica");
+            String comentario = request.getParameter("comentario");
+            
+            //Montrez le information a le client
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet Sevlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Sevlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Paramettos procesados por el sevlet :</h1>");
+            out.println("<table border='1'>");
+            
+            out.println("<tr>");
+            out.println("<td>");
+            out.println("usuario");
+            out.println("</td>");
+            out.println("<td>");
+            out.println(usuario);
+            out.println("<td>");
+            out.println("</tr>");
+            
+            out.println("<tr>");
+            out.println("<td>");
+            out.println("Password");
+            out.println("</td>");
+            out.println("<td>");
+            out.println(password);
+            out.println("<td>");
+            out.println("</tr>");
+            
+             out.println("<tr>");
+            out.println("<td>");
+            out.println("Tecnologias");
+            out.println("</td>");
+            out.println("<td>");
+            for (String tecnologia : tecnologias) {
+                out.println(tecnologia);
+                 out.println(" / ");
+            }
+            out.println("<td>");
+            out.println("</tr>");
+            
+            out.println("<tr>");
+            out.println("<td>");
+            out.println("Genero");
+            out.println("</td>");
+            out.println("<td>");
+            out.println(genero);
+            out.println("<td>");
+            out.println("</tr>");
+            
+            out.println("<tr>");
+            out.println("<td>");
+            out.println("Occupac&oacute;n");
+            out.println("</td>");
+            out.println("<td>");
+            out.println(ocupacion);
+            out.println("<td>");
+            out.println("</tr>");
+            
+            out.println("<tr>");
+            out.println("<td>");
+            out.println("M&uacute;sica favorita ");
+            out.println("</td>");
+            out.println("<td>");
+            if(musica != null){
+                for (String m : musica) {
+                    out.println(m);
+                    out.println(" / ");
+                }
+ 
+            }
+            out.println("<td>");
+            out.println("</tr>");
+            
+            out.println("<tr>");
+            out.println("<td>");
+            out.println("comentario");
+            out.println("</td>");
+            out.println("<td>");
+            out.println(comentario);
+            out.println("<td>");
+            out.println("</tr>");            
+            
             out.println("</body>");
             out.println("</html>");
         }
